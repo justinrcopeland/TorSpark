@@ -284,13 +284,7 @@ This file contains the .onion address of your hidden service.
 
 
 Still working on torifying executables produced by the rat to allow functionality to the tor network from the victim upon infection 11/18/24
----
 
-### Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/XZB-1248/Spark.svg)](https://starchart.cc/XZB-1248/Spark)
-
----
 
 ## License
 

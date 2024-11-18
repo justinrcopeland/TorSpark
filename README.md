@@ -243,6 +243,47 @@ Some major dependencies are listed below.
 * [natpass](https://github.com/lwch/natpass) (MIT License)
 * Image difference algorithm inspired by natpass.
 
+========================================================================================================
+Torifying server side:
+
+Step 1: Install Tor
+
+    Install the Tor service on your server:
+
+sudo apt-get update
+sudo apt-get install tor
+
+Ensure the Tor service is running:
+
+    sudo systemctl start tor
+    sudo systemctl enable tor
+
+Step 2: Configure Tor for Hidden Services
+
+    Edit the Tor configuration file, typically located at /etc/tor/torrc:
+
+sudo nano /etc/tor/torrc
+
+Add the following lines to configure a hidden service:
+
+HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort 80 127.0.0.1:8080
+
+    Replace 80 with the port you want to expose on the Tor network.
+    Replace 127.0.0.1:8080 with the local address and port of your Go web server.
+
+Restart Tor to apply the changes:
+
+sudo systemctl restart tor
+
+Obtain your .onion address:
+
+sudo cat /var/lib/tor/hidden_service/hostname
+
+This file contains the .onion address of your hidden service.
+
+
+Still working on torifying executables produced by the rat to allow functionality to the tor network from the victim upon infection 11/18/24
 ---
 
 ### Stargazers over time
